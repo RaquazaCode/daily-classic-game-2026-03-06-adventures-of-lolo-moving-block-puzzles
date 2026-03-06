@@ -1,0 +1,134 @@
+:root {
+  color-scheme: dark;
+  font-family: 'Trebuchet MS', 'Verdana', sans-serif;
+  background: radial-gradient(circle at top, #1e3a2b 0%, #101f17 45%, #09110d 100%);
+  color: #ecf6ee;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.shell {
+  margin: 0 auto;
+  max-width: 920px;
+  padding: 1rem;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: clamp(1.7rem, 3.3vw, 2.5rem);
+  letter-spacing: 0.08rem;
+}
+
+.header p {
+  margin: 0.25rem 0 1rem;
+  color: #acd1b5;
+}
+
+.hud {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.hud div {
+  border: 1px solid #3f5f4a;
+  background: #12271b;
+  border-radius: 8px;
+  padding: 0.45rem;
+  display: grid;
+}
+
+.hud strong {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: #9fc9ab;
+}
+
+.board {
+  display: grid;
+  gap: 3px;
+  background: #0f2016;
+  border: 2px solid #395844;
+  border-radius: 10px;
+  padding: 6px;
+  aspect-ratio: 12 / 10;
+}
+
+.cell {
+  border-radius: 4px;
+  background: #294432;
+  position: relative;
+}
+
+.cell.wall {
+  background: linear-gradient(135deg, #1f2e24, #2f4536);
+}
+
+.cell.heart::before,
+.cell.enemy::before,
+.cell.block::before,
+.cell.player::before,
+.cell.chest::before {
+  content: '';
+  position: absolute;
+  inset: 18%;
+  border-radius: 3px;
+}
+
+.cell.heart::before {
+  background: #ff5f87;
+  clip-path: polygon(50% 100%, 0 48%, 20% 15%, 50% 32%, 80% 15%, 100% 48%);
+}
+
+.cell.block::before {
+  background: #22c087;
+  box-shadow: inset 0 0 0 2px #0c6f4a;
+}
+
+.cell.enemy::before {
+  background: #e16838;
+  border-radius: 50%;
+}
+
+.cell.player::before {
+  background: #f1f6bc;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #9fb572;
+}
+
+.cell.player.hit::before {
+  animation: pulse 140ms linear infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(0.75); }
+  to { transform: scale(1); }
+}
+
+.cell.chest::before {
+  background: #6f5f36;
+}
+
+.cell.chest.unlocked::before {
+  background: #e7bf4c;
+}
+
+.controls {
+  margin-top: 0.65rem;
+  color: #9fc9ab;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 680px) {
+  .hud {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

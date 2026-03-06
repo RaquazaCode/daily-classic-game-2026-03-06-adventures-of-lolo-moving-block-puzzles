@@ -1,0 +1,57 @@
+{
+  "game": "adventures-of-lolo-moving-block-puzzles",
+  "paused": false,
+  "game_over": false,
+  "win": false,
+  "score": 0,
+  "lives": 3,
+  "player": {
+    "x": 1,
+    "y": 1
+  },
+  "chest_unlocked": false,
+  "hearts_collected": 0,
+  "hearts_total": 3,
+  "hearts_remaining": [
+    {
+      "x": 9,
+      "y": 1
+    },
+    {
+      "x": 3,
+      "y": 5
+    },
+    {
+      "x": 9,
+      "y": 7
+    }
+  ],
+  "enemies": [
+    {
+      "x": 6,
+      "y": 3,
+      "dir": 1
+    },
+    {
+      "x": 10,
+      "y": 5,
+      "dir": -1
+    }
+  ],
+  "blocks": [
+    {
+      "x": 4,
+      "y": 1
+    },
+    {
+      "x": 8,
+      "y": 3
+    },
+    {
+      "x": 5,
+      "y": 7
+    }
+  ],
+  "elapsed_ms": 966.6666666666658,
+  "message": "Collect all hearts to unlock the chest."
+}
