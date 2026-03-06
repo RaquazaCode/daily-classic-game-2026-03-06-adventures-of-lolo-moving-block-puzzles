@@ -1,0 +1,17 @@
+{
+  "name": "daily-classic-game-2026-03-06-adventures-of-lolo-moving-block-puzzles",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node tests/game-core.test.mjs",
+    "capture": "node scripts/playwright-capture.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.58.2",
+    "vite": "^7.1.3"
+  }
+}
